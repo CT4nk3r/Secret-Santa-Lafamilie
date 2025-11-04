@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secret Santa 🎁</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #a8c0ff, #fbc2eb);
+      background-attachment: fixed;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      font-size: 2.2em;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .person {
+      margin: 8px 0;
+      padding: 10px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .person:hover {
+      transform: scale(1.05);
+    }
+
+    .reveal {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #0b7285;
+    }
+
+    @keyframes snow {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(100vh); }
+    }
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: white;
+      font-size: 1em;
+      animation: snow linear infinite;
+      opacity: 0.9;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎅 Secret Santa 🎁</h1>
+  <div class="card">
+    <p>Click your name to reveal your person (password required):</p>
+    <div id="list"></div>
+  </div>
+
+  <script>
+    const SEED = "secret-santa-2024";
+
+    function seededRandom(seed) {
+      let h = 1779033703 ^ seed.length;
+      for (let i = 0; i < seed.length; i++) {
+        h = Math.imul(h ^ seed.charCodeAt(i), 3432918353);
+        h = (h << 13) | (h >>> 19);
+      }
+      return function() {
+        h = Math.imul(h ^ (h >>> 16), 2246822507);
+        h = Math.imul(h ^ (h >>> 13), 3266489909);
+        h ^= h >>> 16;
+        return (h >>> 0) / 4294967296;
+      };
+    }
+
+    function seededShuffle(array, seed) {
+      const rand = seededRandom(seed);
+      const a = [...array];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(rand() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    async function hashPassword(pw) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(pw);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      return Array.from(new Uint8Array(hashBuffer))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
+    }
+
+    async function init() {
+      try {
+        const response = await fetch("participants.json");
+        const data = await response.json();
+
+        const names = data.participants.map(p => p.name);
+        let shuffled = seededShuffle(names, SEED);
+
+        // ensure no one gets themselves
+        for (let i = 0; i < names.length; i++) {
+          if (names[i] === shuffled[i]) {
+            const tmp = shuffled.pop();
+            shuffled.unshift(tmp);
+            i = -1;
+          }
+        }
+
+        const assignments = {};
+        for (let i = 0; i < names.length; i++) {
+          assignments[names[i]] = shuffled[i];
+        }
+
+        const list = document.getElementById('list');
+        data.participants.forEach(person => {
+          const div = document.createElement('div');
+          div.className = 'person';
+          div.textContent = person.name;
+          div.onclick = async () => {
+            const pw = prompt(`Enter password for ${person.name}:`);
+            if (pw === null) return;
+            const enteredHash = await hashPassword(pw);
+            if (enteredHash === person.passwordHash) {
+              div.innerHTML = `${person.name} ➡️ <span class='reveal'>${assignments[person.name]}</span>`;
+              div.onclick = null;
+            } else {
+              alert("Incorrect password!");
+            }
+          };
+          list.appendChild(div);
+        });
+
+        // Snowflakes
+        const snowCount = 40;
+        for (let i = 0; i < snowCount; i++) {
+          const snow = document.createElement('div');
+          snow.className = 'snowflake';
+          snow.textContent = '❄';
+          snow.style.left = Math.random() * 100 + 'vw';
+          snow.style.animationDuration = (Math.random() * 5 + 5) + 's';
+          snow.style.fontSize = (Math.random() * 10 + 10) + 'px';
+          snow.style.animationDelay = Math.random() * 5 + 's';
+          document.body.appendChild(snow);
+        }
+
+      } catch (err) {
+        console.error("Error loading participants.json:", err);
+        document.getElementById('list').innerHTML = "<p style='color:red'>Could not load participant data.</p>";
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

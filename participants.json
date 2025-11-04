@@ -1,0 +1,12 @@
+{
+  "participants": [
+    { "name": "Alex", "passwordHash": "da7570eff4c715f8513ca2f6f9664c3b7acebf1327cf96a91e91ae42607f2a9e" },
+    { "name": "Bence", "passwordHash": "8a3caa22f320f76d4767fe3cc6368e0d3eedfd917213a32137de1b5bb386bafc" },
+    { "name": "Dorci", "passwordHash": "2ada6960d922f569903b29c3cf3faf0a3e2c9ac78e916fe2e1d8299f45cb9a2d" },
+    { "name": "Andi", "passwordHash": "ea9610e53aa5bfb60539007ce29c2585b612e8599cfbdb1132917231152c212b" },
+    { "name": "Bali", "passwordHash": "acf2a6fedc8bcd4fe6e86383f43f4abea25c783a245d42dbbaaddaef1f08ca06" },
+    { "name": "Domi", "passwordHash": "d758a7c46020350fc40f1d1efcaa8ecd0063dee591e244d69ffc1fcdd23ecce7" },
+    { "name": "Norbi", "passwordHash": "f9f1301573e5fc8e712e60857da4674c13d445f14900961bd2810dbccdaeb572" },
+    { "name": "Bosze", "passwordHash": "21e8a2824c9572dbe87f2e06c8d1368cbcd9c14804d7d4be4deded963c6d5f96" }
+  ]
+}

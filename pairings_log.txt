@@ -1,0 +1,779 @@
+🎄 Seed: seed_0
+  Alex ➡️ Kicsi
+  Bence ➡️ Norbi
+  Dorci ➡️ Gyuri
+  Norbi ➡️ Bali
+  Andi ➡️ Bence
+  Bali ➡️ Bosze
+  Domi ➡️ Alex
+  Kicsi ➡️ Adam
+  Gyuri ➡️ Andi
+  Adam ➡️ Domi
+  Bosze ➡️ Dorci
+
+🎄 Seed: seed_1
+  Alex ➡️ Bali
+  Bence ➡️ Norbi
+  Dorci ➡️ Kicsi
+  Norbi ➡️ Gyuri
+  Andi ➡️ Adam
+  Bali ➡️ Domi
+  Domi ➡️ Dorci
+  Kicsi ➡️ Bence
+  Gyuri ➡️ Alex
+  Adam ➡️ Bosze
+  Bosze ➡️ Andi
+
+🎄 Seed: seed_2
+  Alex ➡️ Andi
+  Bence ➡️ Dorci
+  Dorci ➡️ Domi
+  Norbi ➡️ Gyuri
+  Andi ➡️ Bosze
+  Bali ➡️ Norbi
+  Domi ➡️ Bali
+  Kicsi ➡️ Adam
+  Gyuri ➡️ Bence
+  Adam ➡️ Kicsi
+  Bosze ➡️ Alex
+
+🎄 Seed: seed_3
+  Alex ➡️ Domi
+  Bence ➡️ Dorci
+  Dorci ➡️ Andi
+  Norbi ➡️ Adam
+  Andi ➡️ Norbi
+  Bali ➡️ Alex
+  Domi ➡️ Bence
+  Kicsi ➡️ Bosze
+  Gyuri ➡️ Kicsi
+  Adam ➡️ Gyuri
+  Bosze ➡️ Bali
+
+🎄 Seed: seed_4
+  Alex ➡️ Bosze
+  Bence ➡️ Norbi
+  Dorci ➡️ Kicsi
+  Norbi ➡️ Andi
+  Andi ➡️ Bali
+  Bali ➡️ Alex
+  Domi ➡️ Adam
+  Kicsi ➡️ Bence
+  Gyuri ➡️ Domi
+  Adam ➡️ Dorci
+  Bosze ➡️ Gyuri
+
+🎄 Seed: seed_5
+  Alex ➡️ Andi
+  Bence ➡️ Dorci
+  Dorci ➡️ Adam
+  Norbi ➡️ Kicsi
+  Andi ➡️ Norbi
+  Bali ➡️ Gyuri
+  Domi ➡️ Bosze
+  Kicsi ➡️ Bali
+  Gyuri ➡️ Domi
+  Adam ➡️ Alex
+  Bosze ➡️ Bence
+
+🎄 Seed: seed_6
+  Alex ➡️ Domi
+  Bence ➡️ Kicsi
+  Dorci ➡️ Bence
+  Norbi ➡️ Bali
+  Andi ➡️ Bosze
+  Bali ➡️ Gyuri
+  Domi ➡️ Adam
+  Kicsi ➡️ Dorci
+  Gyuri ➡️ Norbi
+  Adam ➡️ Alex
+  Bosze ➡️ Andi
+
+🎄 Seed: seed_7
+  Alex ➡️ Kicsi
+  Bence ➡️ Norbi
+  Dorci ➡️ Gyuri
+  Norbi ➡️ Domi
+  Andi ➡️ Bali
+  Bali ➡️ Bosze
+  Domi ➡️ Adam
+  Kicsi ➡️ Andi
+  Gyuri ➡️ Alex
+  Adam ➡️ Bence
+  Bosze ➡️ Dorci
+
+🎄 Seed: seed_8
+  Alex ➡️ Bosze
+  Bence ➡️ Bali
+  Dorci ➡️ Andi
+  Norbi ➡️ Kicsi
+  Andi ➡️ Alex
+  Bali ➡️ Bence
+  Domi ➡️ Adam
+  Kicsi ➡️ Dorci
+  Gyuri ➡️ Domi
+  Adam ➡️ Norbi
+  Bosze ➡️ Gyuri
+
+🎄 Seed: seed_9
+  Alex ➡️ Kicsi
+  Bence ➡️ Adam
+  Dorci ➡️ Bali
+  Norbi ➡️ Bosze
+  Andi ➡️ Norbi
+  Bali ➡️ Alex
+  Domi ➡️ Gyuri
+  Kicsi ➡️ Dorci
+  Gyuri ➡️ Andi
+  Adam ➡️ Domi
+  Bosze ➡️ Bence
+
+🎄 Seed: seed_10
+  Alex ➡️ Bosze
+  Bence ➡️ Dorci
+  Dorci ➡️ Bence
+  Norbi ➡️ Alex
+  Andi ➡️ Norbi
+  Bali ➡️ Andi
+  Domi ➡️ Adam
+  Kicsi ➡️ Gyuri
+  Gyuri ➡️ Domi
+  Adam ➡️ Kicsi
+  Bosze ➡️ Bali
+
+🎄 Seed: seed_11
+  Alex ➡️ Bali
+  Bence ➡️ Norbi
+  Dorci ➡️ Domi
+  Norbi ➡️ Andi
+  Andi ➡️ Gyuri
+  Bali ➡️ Adam
+  Domi ➡️ Dorci
+  Kicsi ➡️ Alex
+  Gyuri ➡️ Bosze
+  Adam ➡️ Kicsi
+  Bosze ➡️ Bence
+
+🎄 Seed: seed_12
+  Alex ➡️ Norbi
+  Bence ➡️ Domi
+  Dorci ➡️ Bence
+  Norbi ➡️ Adam
+  Andi ➡️ Kicsi
+  Bali ➡️ Bosze
+  Domi ➡️ Gyuri
+  Kicsi ➡️ Dorci
+  Gyuri ➡️ Andi
+  Adam ➡️ Alex
+  Bosze ➡️ Bali
+
+🎄 Seed: seed_13
+  Alex ➡️ Dorci
+  Bence ➡️ Domi
+  Dorci ➡️ Gyuri
+  Norbi ➡️ Kicsi
+  Andi ➡️ Alex
+  Bali ➡️ Bosze
+  Domi ➡️ Andi
+  Kicsi ➡️ Adam
+  Gyuri ➡️ Norbi
+  Adam ➡️ Bali
+  Bosze ➡️ Bence
+
+🎄 Seed: seed_14
+  Alex ➡️ Bosze
+  Bence ➡️ Bali
+  Dorci ➡️ Adam
+  Norbi ➡️ Bence
+  Andi ➡️ Gyuri
+  Bali ➡️ Kicsi
+  Domi ➡️ Dorci
+  Kicsi ➡️ Norbi
+  Gyuri ➡️ Andi
+  Adam ➡️ Domi
+  Bosze ➡️ Alex
+
+🎄 Seed: seed_15
+  Alex ➡️ Bosze
+  Bence ➡️ Dorci
+  Dorci ➡️ Adam
+  Norbi ➡️ Alex
+  Andi ➡️ Kicsi
+  Bali ➡️ Gyuri
+  Domi ➡️ Andi
+  Kicsi ➡️ Norbi
+  Gyuri ➡️ Domi
+  Adam ➡️ Bali
+  Bosze ➡️ Bence
+
+🎄 Seed: seed_16
+  Alex ➡️ Kicsi
+  Bence ➡️ Domi
+  Dorci ➡️ Alex
+  Norbi ➡️ Andi
+  Andi ➡️ Bence
+  Bali ➡️ Dorci
+  Domi ➡️ Adam
+  Kicsi ➡️ Gyuri
+  Gyuri ➡️ Bali
+  Adam ➡️ Bosze
+  Bosze ➡️ Norbi
+
+🎄 Seed: seed_17
+  Alex ➡️ Gyuri
+  Bence ➡️ Alex
+  Dorci ➡️ Bosze
+  Norbi ➡️ Domi
+  Andi ➡️ Adam
+  Bali ➡️ Bence
+  Domi ➡️ Bali
+  Kicsi ➡️ Dorci
+  Gyuri ➡️ Andi
+  Adam ➡️ Norbi
+  Bosze ➡️ Kicsi
+
+🎄 Seed: seed_18
+  Alex ➡️ Andi
+  Bence ➡️ Kicsi
+  Dorci ➡️ Bosze
+  Norbi ➡️ Gyuri
+  Andi ➡️ Domi
+  Bali ➡️ Adam
+  Domi ➡️ Bence
+  Kicsi ➡️ Dorci
+  Gyuri ➡️ Norbi
+  Adam ➡️ Alex
+  Bosze ➡️ Bali
+
+🎄 Seed: seed_19
+  Alex ➡️ Kicsi
+  Bence ➡️ Domi
+  Dorci ➡️ Bali
+  Norbi ➡️ Andi
+  Andi ➡️ Bence
+  Bali ➡️ Gyuri
+  Domi ➡️ Dorci
+  Kicsi ➡️ Adam
+  Gyuri ➡️ Bosze
+  Adam ➡️ Norbi
+  Bosze ➡️ Alex
+
+🎄 Seed: seed_20
+  Alex ➡️ Andi
+  Bence ➡️ Kicsi
+  Dorci ➡️ Gyuri
+  Norbi ➡️ Alex
+  Andi ➡️ Domi
+  Bali ➡️ Adam
+  Domi ➡️ Bosze
+  Kicsi ➡️ Norbi
+  Gyuri ➡️ Dorci
+  Adam ➡️ Bali
+  Bosze ➡️ Bence
+
+🎄 Seed: seed_21
+  Alex ➡️ Bali
+  Bence ➡️ Adam
+  Dorci ➡️ Gyuri
+  Norbi ➡️ Kicsi
+  Andi ➡️ Alex
+  Bali ➡️ Bosze
+  Domi ➡️ Bence
+  Kicsi ➡️ Norbi
+  Gyuri ➡️ Domi
+  Adam ➡️ Andi
+  Bosze ➡️ Dorci
+
+🎄 Seed: seed_22
+  Alex ➡️ Kicsi
+  Bence ➡️ Alex
+  Dorci ➡️ Gyuri
+  Norbi ➡️ Domi
+  Andi ➡️ Bosze
+  Bali ➡️ Dorci
+  Domi ➡️ Andi
+  Kicsi ➡️ Bali
+  Gyuri ➡️ Norbi
+  Adam ➡️ Bence
+  Bosze ➡️ Adam
+
+🎄 Seed: seed_23
+  Alex ➡️ Dorci
+  Bence ➡️ Domi
+  Dorci ➡️ Alex
+  Norbi ➡️ Bosze
+  Andi ➡️ Norbi
+  Bali ➡️ Bence
+  Domi ➡️ Bali
+  Kicsi ➡️ Andi
+  Gyuri ➡️ Kicsi
+  Adam ➡️ Gyuri
+  Bosze ➡️ Adam
+
+🎄 Seed: seed_24
+  Alex ➡️ Norbi
+  Bence ➡️ Bali
+  Dorci ➡️ Adam
+  Norbi ➡️ Andi
+  Andi ➡️ Kicsi
+  Bali ➡️ Domi
+  Domi ➡️ Gyuri
+  Kicsi ➡️ Bosze
+  Gyuri ➡️ Alex
+  Adam ➡️ Bence
+  Bosze ➡️ Dorci
+
+🎄 Seed: seed_25
+  Alex ➡️ Dorci
+  Bence ➡️ Kicsi
+  Dorci ➡️ Bali
+  Norbi ➡️ Domi
+  Andi ➡️ Adam
+  Bali ➡️ Bence
+  Domi ➡️ Andi
+  Kicsi ➡️ Norbi
+  Gyuri ➡️ Bosze
+  Adam ➡️ Gyuri
+  Bosze ➡️ Alex
+
+🎄 Seed: seed_26
+  Alex ➡️ Gyuri
+  Bence ➡️ Dorci
+  Dorci ➡️ Andi
+  Norbi ➡️ Domi
+  Andi ➡️ Bali
+  Bali ➡️ Norbi
+  Domi ➡️ Adam
+  Kicsi ➡️ Alex
+  Gyuri ➡️ Kicsi
+  Adam ➡️ Bosze
+  Bosze ➡️ Bence
+
+🎄 Seed: seed_27
+  Alex ➡️ Bali
+  Bence ➡️ Alex
+  Dorci ➡️ Domi
+  Norbi ➡️ Gyuri
+  Andi ➡️ Bosze
+  Bali ➡️ Bence
+  Domi ➡️ Adam
+  Kicsi ➡️ Dorci
+  Gyuri ➡️ Norbi
+  Adam ➡️ Andi
+  Bosze ➡️ Kicsi
+
+🎄 Seed: seed_28
+  Alex ➡️ Bali
+  Bence ➡️ Adam
+  Dorci ➡️ Kicsi
+  Norbi ➡️ Bosze
+  Andi ➡️ Dorci
+  Bali ➡️ Domi
+  Domi ➡️ Norbi
+  Kicsi ➡️ Bence
+  Gyuri ➡️ Alex
+  Adam ➡️ Andi
+  Bosze ➡️ Gyuri
+
+🎄 Seed: seed_29
+  Alex ➡️ Domi
+  Bence ➡️ Norbi
+  Dorci ➡️ Bosze
+  Norbi ➡️ Alex
+  Andi ➡️ Kicsi
+  Bali ➡️ Adam
+  Domi ➡️ Dorci
+  Kicsi ➡️ Bence
+  Gyuri ➡️ Andi
+  Adam ➡️ Gyuri
+  Bosze ➡️ Bali
+
+🎄 Seed: seed_30
+  Alex ➡️ Dorci
+  Bence ➡️ Andi
+  Dorci ➡️ Alex
+  Norbi ➡️ Gyuri
+  Andi ➡️ Kicsi
+  Bali ➡️ Adam
+  Domi ➡️ Bence
+  Kicsi ➡️ Norbi
+  Gyuri ➡️ Bosze
+  Adam ➡️ Bali
+  Bosze ➡️ Domi
+
+🎄 Seed: seed_31
+  Alex ➡️ Domi
+  Bence ➡️ Kicsi
+  Dorci ➡️ Bali
+  Norbi ➡️ Bosze
+  Andi ➡️ Alex
+  Bali ➡️ Bence
+  Domi ➡️ Dorci
+  Kicsi ➡️ Gyuri
+  Gyuri ➡️ Andi
+  Adam ➡️ Norbi
+  Bosze ➡️ Adam
+
+🎄 Seed: seed_32
+  Alex ➡️ Norbi
+  Bence ➡️ Alex
+  Dorci ➡️ Adam
+  Norbi ➡️ Bali
+  Andi ➡️ Kicsi
+  Bali ➡️ Bence
+  Domi ➡️ Andi
+  Kicsi ➡️ Gyuri
+  Gyuri ➡️ Domi
+  Adam ➡️ Bosze
+  Bosze ➡️ Dorci
+
+🎄 Seed: seed_33
+  Alex ➡️ Gyuri
+  Bence ➡️ Norbi
+  Dorci ➡️ Bence
+  Norbi ➡️ Adam
+  Andi ➡️ Kicsi
+  Bali ➡️ Andi
+  Domi ➡️ Bali
+  Kicsi ➡️ Dorci
+  Gyuri ➡️ Alex
+  Adam ➡️ Bosze
+  Bosze ➡️ Domi
+
+🎄 Seed: seed_34
+  Alex ➡️ Gyuri
+  Bence ➡️ Domi
+  Dorci ➡️ Andi
+  Norbi ➡️ Bali
+  Andi ➡️ Kicsi
+  Bali ➡️ Bence
+  Domi ➡️ Alex
+  Kicsi ➡️ Norbi
+  Gyuri ➡️ Dorci
+  Adam ➡️ Bosze
+  Bosze ➡️ Adam
+
+🎄 Seed: seed_35
+  Alex ➡️ Domi
+  Bence ➡️ Adam
+  Dorci ➡️ Bosze
+  Norbi ➡️ Bali
+  Andi ➡️ Alex
+  Bali ➡️ Dorci
+  Domi ➡️ Andi
+  Kicsi ➡️ Norbi
+  Gyuri ➡️ Kicsi
+  Adam ➡️ Gyuri
+  Bosze ➡️ Bence
+
+🎄 Seed: seed_36
+  Alex ➡️ Norbi
+  Bence ➡️ Alex
+  Dorci ➡️ Bali
+  Norbi ➡️ Kicsi
+  Andi ➡️ Bence
+  Bali ➡️ Dorci
+  Domi ➡️ Adam
+  Kicsi ➡️ Bosze
+  Gyuri ➡️ Domi
+  Adam ➡️ Andi
+  Bosze ➡️ Gyuri
+
+🎄 Seed: seed_37
+  Alex ➡️ Bali
+  Bence ➡️ Andi
+  Dorci ➡️ Domi
+  Norbi ➡️ Bosze
+  Andi ➡️ Bence
+  Bali ➡️ Kicsi
+  Domi ➡️ Adam
+  Kicsi ➡️ Alex
+  Gyuri ➡️ Dorci
+  Adam ➡️ Gyuri
+  Bosze ➡️ Norbi
+
+🎄 Seed: seed_38
+  Alex ➡️ Dorci
+  Bence ➡️ Alex
+  Dorci ➡️ Bali
+  Norbi ➡️ Bosze
+  Andi ➡️ Adam
+  Bali ➡️ Andi
+  Domi ➡️ Bence
+  Kicsi ➡️ Norbi
+  Gyuri ➡️ Kicsi
+  Adam ➡️ Domi
+  Bosze ➡️ Gyuri
+
+🎄 Seed: seed_39
+  Alex ➡️ Bosze
+  Bence ➡️ Dorci
+  Dorci ➡️ Bence
+  Norbi ➡️ Andi
+  Andi ➡️ Kicsi
+  Bali ➡️ Adam
+  Domi ➡️ Norbi
+  Kicsi ➡️ Bali
+  Gyuri ➡️ Domi
+  Adam ➡️ Alex
+  Bosze ➡️ Gyuri
+
+🎄 Seed: seed_40
+  Alex ➡️ Andi
+  Bence ➡️ Bali
+  Dorci ➡️ Domi
+  Norbi ➡️ Alex
+  Andi ➡️ Bosze
+  Bali ➡️ Bence
+  Domi ➡️ Adam
+  Kicsi ➡️ Norbi
+  Gyuri ➡️ Dorci
+  Adam ➡️ Gyuri
+  Bosze ➡️ Kicsi
+
+🎄 Seed: seed_41
+  Alex ➡️ Bence
+  Bence ➡️ Bali
+  Dorci ➡️ Adam
+  Norbi ➡️ Gyuri
+  Andi ➡️ Bosze
+  Bali ➡️ Norbi
+  Domi ➡️ Dorci
+  Kicsi ➡️ Andi
+  Gyuri ➡️ Kicsi
+  Adam ➡️ Domi
+  Bosze ➡️ Alex
+
+🎄 Seed: seed_42
+  Alex ➡️ Andi
+  Bence ➡️ Domi
+  Dorci ➡️ Bali
+  Norbi ➡️ Gyuri
+  Andi ➡️ Bosze
+  Bali ➡️ Bence
+  Domi ➡️ Alex
+  Kicsi ➡️ Adam
+  Gyuri ➡️ Norbi
+  Adam ➡️ Kicsi
+  Bosze ➡️ Dorci
+
+🎄 Seed: seed_43
+  Alex ➡️ Bosze
+  Bence ➡️ Adam
+  Dorci ➡️ Gyuri
+  Norbi ➡️ Bali
+  Andi ➡️ Domi
+  Bali ➡️ Bence
+  Domi ➡️ Andi
+  Kicsi ➡️ Dorci
+  Gyuri ➡️ Alex
+  Adam ➡️ Kicsi
+  Bosze ➡️ Norbi
+
+🎄 Seed: seed_44
+  Alex ➡️ Bence
+  Bence ➡️ Bosze
+  Dorci ➡️ Bali
+  Norbi ➡️ Domi
+  Andi ➡️ Gyuri
+  Bali ➡️ Adam
+  Domi ➡️ Dorci
+  Kicsi ➡️ Alex
+  Gyuri ➡️ Andi
+  Adam ➡️ Norbi
+  Bosze ➡️ Kicsi
+
+🎄 Seed: seed_45
+  Alex ➡️ Gyuri
+  Bence ➡️ Bosze
+  Dorci ➡️ Alex
+  Norbi ➡️ Kicsi
+  Andi ➡️ Dorci
+  Bali ➡️ Norbi
+  Domi ➡️ Bali
+  Kicsi ➡️ Andi
+  Gyuri ➡️ Adam
+  Adam ➡️ Bence
+  Bosze ➡️ Domi
+
+🎄 Seed: seed_46
+  Alex ➡️ Andi
+  Bence ➡️ Bali
+  Dorci ➡️ Gyuri
+  Norbi ➡️ Bence
+  Andi ➡️ Norbi
+  Bali ➡️ Dorci
+  Domi ➡️ Adam
+  Kicsi ➡️ Bosze
+  Gyuri ➡️ Alex
+  Adam ➡️ Domi
+  Bosze ➡️ Kicsi
+
+🎄 Seed: seed_47
+  Alex ➡️ Gyuri
+  Bence ➡️ Bali
+  Dorci ➡️ Domi
+  Norbi ➡️ Bosze
+  Andi ➡️ Kicsi
+  Bali ➡️ Bence
+  Domi ➡️ Adam
+  Kicsi ➡️ Alex
+  Gyuri ➡️ Andi
+  Adam ➡️ Norbi
+  Bosze ➡️ Dorci
+
+🎄 Seed: seed_48
+  Alex ➡️ Andi
+  Bence ➡️ Kicsi
+  Dorci ➡️ Adam
+  Norbi ➡️ Bosze
+  Andi ➡️ Domi
+  Bali ➡️ Norbi
+  Domi ➡️ Bali
+  Kicsi ➡️ Dorci
+  Gyuri ➡️ Bence
+  Adam ➡️ Gyuri
+  Bosze ➡️ Alex
+
+🎄 Seed: seed_49
+  Alex ➡️ Norbi
+  Bence ➡️ Alex
+  Dorci ➡️ Bence
+  Norbi ➡️ Bali
+  Andi ➡️ Domi
+  Bali ➡️ Gyuri
+  Domi ➡️ Dorci
+  Kicsi ➡️ Bosze
+  Gyuri ➡️ Adam
+  Adam ➡️ Andi
+  Bosze ➡️ Kicsi
+
+🎄 Seed: seed_50
+  Alex ➡️ Dorci
+  Bence ➡️ Norbi
+  Dorci ➡️ Gyuri
+  Norbi ➡️ Bosze
+  Andi ➡️ Adam
+  Bali ➡️ Kicsi
+  Domi ➡️ Bali
+  Kicsi ➡️ Bence
+  Gyuri ➡️ Andi
+  Adam ➡️ Alex
+  Bosze ➡️ Domi
+
+🎄 Seed: seed_51
+  Alex ➡️ Dorci
+  Bence ➡️ Adam
+  Dorci ➡️ Bence
+  Norbi ➡️ Bali
+  Andi ➡️ Gyuri
+  Bali ➡️ Norbi
+  Domi ➡️ Bosze
+  Kicsi ➡️ Andi
+  Gyuri ➡️ Kicsi
+  Adam ➡️ Domi
+  Bosze ➡️ Alex
+
+🎄 Seed: seed_52
+  Alex ➡️ Dorci
+  Bence ➡️ Domi
+  Dorci ➡️ Kicsi
+  Norbi ➡️ Adam
+  Andi ➡️ Alex
+  Bali ➡️ Gyuri
+  Domi ➡️ Bali
+  Kicsi ➡️ Bosze
+  Gyuri ➡️ Bence
+  Adam ➡️ Norbi
+  Bosze ➡️ Andi
+
+🎄 Seed: seed_53
+  Alex ➡️ Dorci
+  Bence ➡️ Adam
+  Dorci ➡️ Bence
+  Norbi ➡️ Bali
+  Andi ➡️ Kicsi
+  Bali ➡️ Alex
+  Domi ➡️ Norbi
+  Kicsi ➡️ Andi
+  Gyuri ➡️ Bosze
+  Adam ➡️ Gyuri
+  Bosze ➡️ Domi
+
+🎄 Seed: seed_54
+  Alex ➡️ Bence
+  Bence ➡️ Dorci
+  Dorci ➡️ Domi
+  Norbi ➡️ Andi
+  Andi ➡️ Alex
+  Bali ➡️ Adam
+  Domi ➡️ Gyuri
+  Kicsi ➡️ Norbi
+  Gyuri ➡️ Bali
+  Adam ➡️ Bosze
+  Bosze ➡️ Kicsi
+
+🎄 Seed: seed_55
+  Alex ➡️ Dorci
+  Bence ➡️ Norbi
+  Dorci ➡️ Gyuri
+  Norbi ➡️ Bence
+  Andi ➡️ Domi
+  Bali ➡️ Kicsi
+  Domi ➡️ Alex
+  Kicsi ➡️ Adam
+  Gyuri ➡️ Bali
+  Adam ➡️ Bosze
+  Bosze ➡️ Andi
+
+🎄 Seed: seed_56
+  Alex ➡️ Bali
+  Bence ➡️ Dorci
+  Dorci ➡️ Adam
+  Norbi ➡️ Gyuri
+  Andi ➡️ Bence
+  Bali ➡️ Domi
+  Domi ➡️ Andi
+  Kicsi ➡️ Bosze
+  Gyuri ➡️ Alex
+  Adam ➡️ Kicsi
+  Bosze ➡️ Norbi
+
+🎄 Seed: seed_57
+  Alex ➡️ Kicsi
+  Bence ➡️ Norbi
+  Dorci ➡️ Bali
+  Norbi ➡️ Alex
+  Andi ➡️ Adam
+  Bali ➡️ Bence
+  Domi ➡️ Dorci
+  Kicsi ➡️ Andi
+  Gyuri ➡️ Bosze
+  Adam ➡️ Domi
+  Bosze ➡️ Gyuri
+
+🎄 Seed: seed_58
+  Alex ➡️ Bence
+  Bence ➡️ Dorci
+  Dorci ➡️ Gyuri
+  Norbi ➡️ Kicsi
+  Andi ➡️ Alex
+  Bali ➡️ Bosze
+  Domi ➡️ Adam
+  Kicsi ➡️ Norbi
+  Gyuri ➡️ Andi
+  Adam ➡️ Bali
+  Bosze ➡️ Domi
+
+🎄 Seed: seed_59
+  Alex ➡️ Kicsi
+  Bence ➡️ Dorci
+  Dorci ➡️ Bali
+  Norbi ➡️ Andi
+  Andi ➡️ Domi
+  Bali ➡️ Alex
+  Domi ➡️ Bosze
+  Kicsi ➡️ Bence
+  Gyuri ➡️ Adam
+  Adam ➡️ Norbi
+  Bosze ➡️ Gyuri

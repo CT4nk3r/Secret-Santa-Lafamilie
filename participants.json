@@ -8,7 +8,8 @@
     { "name": "Bali", "passwordHash": "acf2a6fedc8bcd4fe6e86383f43f4abea25c783a245d42dbbaaddaef1f08ca06" },
     { "name": "Domi", "passwordHash": "d758a7c46020350fc40f1d1efcaa8ecd0063dee591e244d69ffc1fcdd23ecce7" },
     { "name": "Kicsi", "passwordHash": "f9f1301573e5fc8e712e60857da4674c13d445f14900961bd2810dbccdaeb572" },
-    { "name": "Gyui", "passwordHash": "f9f1301573e5fc8e712e60857da4674c13d445f14900961bd2810dbccdaeb572" },
+    { "name": "Gyuri", "passwordHash": "f9f1301573e5fc8e712e60857da4674c13d445f14900961bd2810dbccdaeb572" },
+    { "name": "Adam", "passwordHash": "f9f1301573e5fc8e712e60857da4674c13d445f14900961bd2810dbccdaeb572" },
     { "name": "Bosze", "passwordHash": "21e8a2824c9572dbe87f2e06c8d1368cbcd9c14804d7d4be4deded963c6d5f96" }
   ],
   "exclusions": [
@@ -16,6 +17,7 @@
     ["Norbi", "Dorci"],
     ["Domi", "Kicsi"],
     ["Kicsi", "Domi"],
-    ["Bence", "Gyuri"]
+    ["Bence", "Gyuri"],
+    ["Alex", "Adam"]
   ]
 }

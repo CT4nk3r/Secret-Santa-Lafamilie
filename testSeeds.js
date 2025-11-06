@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const SEEDS_TO_TEST = 60; // how many seeds to test
+const SEEDS_TO_TEST = 300; // how many seeds to test
 const OUTPUT_FILE = "pairings_log.txt";
 
 // ------------------ Helper Functions ------------------

@@ -51,6 +51,7 @@
       color: #0b7285;
     }
 
+    /* ❄️ Snow animation */
     @keyframes snow {
       0% { transform: translateY(0); }
       100% { transform: translateY(100vh); }
@@ -74,7 +75,7 @@
   </div>
 
   <script>
-    const SEED = "secret-santa-2024";
+    const SEED = "christmas2025";
 
     function seededRandom(seed) {
       let h = 1779033703 ^ seed.length;
@@ -100,6 +101,45 @@
       return a;
     }
 
+    function isValidPairing(names, shuffled, exclusions) {
+      for (let i = 0; i < names.length; i++) {
+        const giver = names[i];
+        const receiver = shuffled[i];
+
+        // No self-gifts
+        if (giver === receiver) return false;
+
+        // One-way exclusions only
+        for (const [a, b] of exclusions) {
+          if (giver === a && receiver === b) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    function generateValidAssignments(names, exclusions, seed) {
+      let shuffled = seededShuffle(names, seed);
+      let attempts = 0;
+      const MAX_ATTEMPTS = 10000;
+
+      while (!isValidPairing(names, shuffled, exclusions)) {
+        seed = seed + "_retry" + attempts;
+        shuffled = seededShuffle(names, seed);
+        attempts++;
+        if (attempts > MAX_ATTEMPTS) {
+          throw new Error("Could not find a valid pairing — check exclusions or participant count.");
+        }
+      }
+
+      const result = {};
+      for (let i = 0; i < names.length; i++) {
+        result[names[i]] = shuffled[i];
+      }
+      return result;
+    }
+
     async function hashPassword(pw) {
       const encoder = new TextEncoder();
       const data = encoder.encode(pw);
@@ -115,21 +155,8 @@
         const data = await response.json();
 
         const names = data.participants.map(p => p.name);
-        let shuffled = seededShuffle(names, SEED);
-
-        // ensure no one gets themselves
-        for (let i = 0; i < names.length; i++) {
-          if (names[i] === shuffled[i]) {
-            const tmp = shuffled.pop();
-            shuffled.unshift(tmp);
-            i = -1;
-          }
-        }
-
-        const assignments = {};
-        for (let i = 0; i < names.length; i++) {
-          assignments[names[i]] = shuffled[i];
-        }
+        const exclusions = data.exclusions || [];
+        const assignments = generateValidAssignments(names, exclusions, SEED);
 
         const list = document.getElementById('list');
         data.participants.forEach(person => {

@@ -5,10 +5,6 @@
       "passwordHash": "2c06a1a248413e1e21695430709b42583171fe0c439e82c008e7543f523af60a"
     },
     {
-      "name": "Adam",
-      "passwordHash": "19fe0c1f7714c755c6a1bbf71da1651532a6b1edfc6bd63d7faf0a9a3eedc7dc"
-    },
-    {
       "name": "Huni",
       "passwordHash": "6ccffa4977d4246ed9de8ad27693e9802b50d105aae43730d06f1dc840ca6df5"
     },
@@ -29,10 +25,6 @@
       "passwordHash": "ce63e69d4e3da20f26c64a567478fffbe4655d956c0c7bf7fe6d430f5747030c"
     },
     {
-      "name": "Norbi",
-      "passwordHash": "d7d763e0181b601fbf42fec90214549b5f36bb41c7ec2b2dced8f683f34a3d60"
-    },
-    {
       "name": "Domi",
       "passwordHash": "9643b3fc9992af553d09e7173a07c6c07e2a0d9794d28f2692e3a11c142acd4a"
     },
@@ -45,23 +37,15 @@
       "passwordHash": "0f67d427e84a1f963470f0fb53952c507e8f77eecf0dc5db980d09f1a092dcb8"
     },
     {
-      "name": "Gyuri",
-      "passwordHash": "221e702de7106409cb6cde0eb20675a3442eb4a390a5a702c8d8432bcff61acb"
-    },
-    {
       "name": "Bosze",
       "passwordHash": "066fc17bc99166191a7138372fd983e1be3524383b09976a1115dbd5b5414d3a"
     }
   ],
   "exclusions": [
-    ["Dorci", "Norbi"],
-    ["Norbi", "Dorci"],
     ["Domi", "Kicsi"],
     ["Kicsi", "Domi"],
     ["Andi", "Dani"],
-    ["Bence", "Gyuri"],
     ["Bence", "Dani"],
-    ["Alex", "Dani"],
-    ["Alex", "Adam"]
+    ["Alex", "Dani"]
   ]
 }

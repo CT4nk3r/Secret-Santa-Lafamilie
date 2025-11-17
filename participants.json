@@ -24,6 +24,10 @@
       "name": "Dorci",
       "passwordHash": "ce63e69d4e3da20f26c64a567478fffbe4655d956c0c7bf7fe6d430f5747030c"
     },
+     {
+      "name": "Norbi",
+      "passwordHash": "d7d763e0181b601fbf42fec90214549b5f36bb41c7ec2b2dced8f683f34a3d60"
+    },
     {
       "name": "Domi",
       "passwordHash": "9643b3fc9992af553d09e7173a07c6c07e2a0d9794d28f2692e3a11c142acd4a"
@@ -43,9 +47,19 @@
   ],
   "exclusions": [
     ["Domi", "Kicsi"],
+    ["Dorci", "Norbi"],
     ["Kicsi", "Domi"],
     ["Andi", "Dani"],
     ["Bence", "Dani"],
+    ["Norbi", "Bence"],
+    ["Norbi", "Huni"],
+    ["Norbi", "Dani"],
+    ["Norbi", "Andi"],
+    ["Norbi", "Dorci"],
+    ["Norbi", "Domi"],
+    ["Norbi", "Kicsi"],
+    ["Norbi", "Bosze"],
+    ["Norbi", "Bali"],
     ["Alex", "Dani"]
   ]
 }

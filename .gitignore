@@ -141,3 +141,5 @@ vite.config.ts.timestamp-*
 #testing files generated
 passwords.json
 pairings_log.txt
+# encrypted password list (never commit)
+passwords.txt*

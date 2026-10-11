@@ -34,3 +34,16 @@ test("impossible constraints fail with a clear error", () => {
   const impossible = { ...config, exclusions: names.filter(n => n !== "Alex").map(n => [n, "Alex"]) };
   assert.throws(() => drawFor(impossible, history), /No valid draw/);
 });
+
+test("config is sane: unique names, valid unique password hashes, no typos in rules", () => {
+  assert.equal(new Set(names).size, names.length, "duplicate participant names");
+  const hashes = config.participants.map(p => p.passwordHash);
+  for (const h of hashes) assert.match(h, /^[0-9a-f]{64}$/, "passwordHash must be a SHA-256 hex string");
+  assert.equal(new Set(hashes).size, hashes.length, "two people share the same password");
+
+  const known = new Set(names);
+  for (const [a, b] of [...config.couples, ...config.exclusions]) {
+    assert.ok(known.has(a) && known.has(b), `couples/exclusions mention an unknown name: ${a}, ${b}`);
+  }
+  assert.ok(config.event.seed && config.event.year, "event.year and event.seed are required");
+});

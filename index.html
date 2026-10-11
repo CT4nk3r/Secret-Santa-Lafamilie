@@ -4,16 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Secret Santa 🎁</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg-top: #a8c0ff;
+      --bg-bottom: #fbc2eb;
+      --card: rgba(255, 255, 255, 0.88);
+      --item: rgba(255, 255, 255, 0.95);
+      --text: #333;
+      --accent: #0b7285;
+      --error: #c92a2a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-top: #1b2540;
+        --bg-bottom: #3d2347;
+        --card: rgba(30, 33, 50, 0.9);
+        --item: rgba(50, 55, 80, 0.95);
+        --text: #eee;
+        --accent: #66d9e8;
+        --error: #ff8787;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #a8c0ff, #fbc2eb);
+      font-family: 'Poppins', system-ui, sans-serif;
+      background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
       background-attachment: fixed;
-      color: #333;
+      color: var(--text);
       text-align: center;
-      padding: 40px;
+      margin: 0;
+      padding: 40px 16px;
       min-height: 100vh;
-      position: relative;
       overflow-x: hidden;
     }
 
@@ -21,178 +46,275 @@
       color: white;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
       font-size: 2.2em;
+      margin-top: 0;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.85);
+      background: var(--card);
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       max-width: 500px;
-      margin: 0 auto;
+      margin: 0 auto 16px;
       padding: 20px;
     }
 
+    .info p { margin: 4px 0; }
+    .countdown { font-weight: 600; color: var(--accent); }
+
     .person {
+      display: block;
+      width: 100%;
       margin: 8px 0;
-      padding: 10px;
-      background: rgba(255,255,255,0.9);
+      padding: 12px;
+      font: inherit;
+      color: inherit;
+      background: var(--item);
+      border: 0;
       border-radius: 8px;
       cursor: pointer;
       transition: transform 0.2s;
     }
+    .person:hover:not(:disabled) { transform: scale(1.03); }
+    .person:disabled { cursor: default; }
+    .person .seen { opacity: 0.6; font-size: 0.8em; }
+    .reveal { font-weight: 600; color: var(--accent); }
 
-    .person:hover {
-      transform: scale(1.05);
+    dialog {
+      border: 0;
+      border-radius: 12px;
+      padding: 24px;
+      width: min(92vw, 360px);
+      background: var(--card);
+      color: var(--text);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+    dialog::backdrop { background: rgba(0,0,0,0.5); }
+    dialog input {
+      width: 100%;
+      padding: 10px;
+      margin: 12px 0 4px;
+      font: inherit;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      background: var(--item);
+      color: inherit;
+    }
+    dialog .error { color: var(--error); min-height: 1.4em; margin: 0 0 8px; font-size: 0.9em; }
+    dialog .buttons { display: flex; gap: 8px; justify-content: center; }
+    dialog button {
+      font: inherit;
+      padding: 8px 18px;
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    dialog button.primary { background: var(--accent); color: white; }
+    @media (prefers-color-scheme: dark) { dialog button.primary { color: #111; } }
+    .shake { animation: shake 0.4s; }
+    @keyframes shake {
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
     }
 
-    .reveal {
-      font-weight: bold;
-      margin-top: 10px;
-      color: #0b7285;
-    }
-
-    /* ❄️ Snow animation */
-    @keyframes snow {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(100vh); }
-    }
     .snowflake {
       position: fixed;
-      top: -10px;
+      top: -20px;
       color: white;
-      font-size: 1em;
       animation: snow linear infinite;
       opacity: 0.9;
       z-index: 9999;
+      pointer-events: none;
+    }
+    @keyframes snow { to { transform: translateY(110vh); } }
+
+    .confetti {
+      position: fixed;
+      top: 0;
+      z-index: 10000;
+      pointer-events: none;
+      animation: fall 1.8s ease-in forwards;
+    }
+    @keyframes fall {
+      from { transform: translateY(-5vh) rotate(0); opacity: 1; }
+      to   { transform: translateY(105vh) rotate(540deg); opacity: 0.8; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .snowflake, .confetti { display: none; }
+      .shake { animation: none; }
+      .person { transition: none; }
     }
   </style>
 </head>
 <body>
-  <h1>🎅 Secret Santa 🎁</h1>
+  <h1>🎅 Secret Santa <span id="year"></span> 🎁</h1>
+
+  <div class="card info" id="info" hidden></div>
+
   <div class="card">
     <p>Click your name to reveal your person (password required):</p>
     <div id="list"></div>
   </div>
 
-  <script>
-    const SEED = "christmas2025";
+  <dialog id="pwDialog">
+    <form method="dialog" id="pwForm">
+      <strong id="pwTitle"></strong>
+      <input id="pwInput" type="password" autocomplete="off" placeholder="Password" required />
+      <p class="error" id="pwError" role="alert"></p>
+      <div class="buttons">
+        <button type="button" id="pwCancel">Cancel</button>
+        <button type="submit" class="primary">Reveal 🎁</button>
+      </div>
+    </form>
+  </dialog>
 
-    function seededRandom(seed) {
-      let h = 1779033703 ^ seed.length;
-      for (let i = 0; i < seed.length; i++) {
-        h = Math.imul(h ^ seed.charCodeAt(i), 3432918353);
-        h = (h << 13) | (h >>> 19);
-      }
-      return function() {
-        h = Math.imul(h ^ (h >>> 16), 2246822507);
-        h = Math.imul(h ^ (h >>> 13), 3266489909);
-        h ^= h >>> 16;
-        return (h >>> 0) / 4294967296;
-      };
+  <script type="module">
+    import { drawFor, sha256Hex } from "./santa.js";
+
+    const $ = id => document.getElementById(id);
+    const seenKey = year => `santa-seen-${year}`;
+
+    function loadSeen(year) {
+      try { return new Set(JSON.parse(localStorage.getItem(seenKey(year)) || "[]")); }
+      catch { return new Set(); }
+    }
+    function saveSeen(year, seen) {
+      try { localStorage.setItem(seenKey(year), JSON.stringify([...seen])); } catch {}
     }
 
-    function seededShuffle(array, seed) {
-      const rand = seededRandom(seed);
-      const a = [...array];
-      for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(rand() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
+    function renderInfo(event) {
+      const lines = [];
+      if (event.date) {
+        const days = Math.ceil((new Date(event.date + "T00:00:00") - new Date()) / 864e5);
+        const when = new Date(event.date + "T00:00:00").toLocaleDateString(undefined, { dateStyle: "full" });
+        lines.push(`<p>📅 ${when}</p>`);
+        if (days > 0) lines.push(`<p class="countdown">${days} day${days === 1 ? "" : "s"} to go!</p>`);
+        else if (days === 0) lines.push(`<p class="countdown">It's today! 🎉</p>`);
       }
-      return a;
+      if (event.budget) lines.push(`<p>💰 Budget: ${event.budget}</p>`);
+      if (event.note) lines.push(`<p>${event.note}</p>`);
+      if (lines.length) {
+        const el = $("info");
+        el.innerHTML = lines.join("");
+        el.hidden = false;
+      }
     }
 
-    function isValidPairing(names, shuffled, exclusions) {
-      for (let i = 0; i < names.length; i++) {
-        const giver = names[i];
-        const receiver = shuffled[i];
-
-        // No self-gifts
-        if (giver === receiver) return false;
-
-        // One-way exclusions only
-        for (const [a, b] of exclusions) {
-          if (giver === a && receiver === b) {
-            return false;
-          }
-        }
-      }
-      return true;
+    // Keeps the dialog open until `verify(password)` passes. Resolves true on
+    // success (dialog left open for the caller to close) or false if cancelled.
+    function askPassword(name, verify) {
+      const dialog = $("pwDialog"), input = $("pwInput");
+      $("pwTitle").textContent = `Password for ${name}`;
+      input.value = "";
+      $("pwError").textContent = "";
+      dialog.showModal();
+      input.focus();
+      return new Promise(resolve => {
+        const finish = ok => {
+          $("pwForm").onsubmit = $("pwCancel").onclick = dialog.onclose = null;
+          resolve(ok);
+        };
+        $("pwForm").onsubmit = async e => {
+          e.preventDefault();
+          if (await verify(input.value)) finish(true);
+          else wrongPassword();
+        };
+        $("pwCancel").onclick = () => { dialog.close(); finish(false); };
+        dialog.onclose = () => finish(false);
+      });
     }
 
-    function generateValidAssignments(names, exclusions, seed) {
-      let shuffled = seededShuffle(names, seed);
-      let attempts = 0;
-      const MAX_ATTEMPTS = 10000;
-
-      while (!isValidPairing(names, shuffled, exclusions)) {
-        seed = seed + "_retry" + attempts;
-        shuffled = seededShuffle(names, seed);
-        attempts++;
-        if (attempts > MAX_ATTEMPTS) {
-          throw new Error("Could not find a valid pairing — check exclusions or participant count.");
-        }
-      }
-
-      const result = {};
-      for (let i = 0; i < names.length; i++) {
-        result[names[i]] = shuffled[i];
-      }
-      return result;
+    function wrongPassword() {
+      const dialog = $("pwDialog");
+      $("pwError").textContent = "Wrong password, try again 🎄";
+      $("pwInput").select();
+      dialog.classList.remove("shake");
+      void dialog.offsetWidth;
+      dialog.classList.add("shake");
     }
 
-    async function hashPassword(pw) {
-      const encoder = new TextEncoder();
-      const data = encoder.encode(pw);
-      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-      return Array.from(new Uint8Array(hashBuffer))
-        .map(b => b.toString(16).padStart(2, '0'))
-        .join('');
+    function confetti() {
+      const colors = ["🎉", "🎁", "⭐", "❄️", "🎄"];
+      for (let i = 0; i < 40; i++) {
+        const c = document.createElement("div");
+        c.className = "confetti";
+        c.textContent = colors[i % colors.length];
+        c.style.left = Math.random() * 100 + "vw";
+        c.style.fontSize = Math.random() * 14 + 14 + "px";
+        c.style.animationDelay = Math.random() * 0.6 + "s";
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 3000);
+      }
+    }
+
+    function snow() {
+      for (let i = 0; i < 40; i++) {
+        const s = document.createElement("div");
+        s.className = "snowflake";
+        s.textContent = "❄";
+        s.style.left = Math.random() * 100 + "vw";
+        s.style.animationDuration = Math.random() * 5 + 5 + "s";
+        s.style.animationDelay = Math.random() * 5 + "s";
+        s.style.fontSize = Math.random() * 10 + 10 + "px";
+        document.body.appendChild(s);
+      }
     }
 
     async function init() {
       try {
-        const response = await fetch("participants.json");
-        const data = await response.json();
+        const [config, history] = await Promise.all([
+          fetch("participants.json").then(r => r.json()),
+          fetch("history.json").then(r => r.json()).catch(() => ({})),
+        ]);
+        const { event } = config;
+        $("year").textContent = event.year;
+        document.title = `Secret Santa ${event.year} 🎁`;
+        renderInfo(event);
 
-        const names = data.participants.map(p => p.name);
-        const exclusions = data.exclusions || [];
-        const assignments = generateValidAssignments(names, exclusions, SEED);
+        const assignments = drawFor(config, history);
+        const seen = loadSeen(event.year);
+        const list = $("list");
 
-        const list = document.getElementById('list');
-        data.participants.forEach(person => {
-          const div = document.createElement('div');
-          div.className = 'person';
-          div.textContent = person.name;
-          div.onclick = async () => {
-            const pw = prompt(`Enter password for ${person.name}:`);
-            if (pw === null) return;
-            const enteredHash = await hashPassword(pw);
-            if (enteredHash === person.passwordHash) {
-              div.innerHTML = `${person.name} ➡️ <span class='reveal'>${assignments[person.name]}</span>`;
-              div.onclick = null;
-            } else {
-              alert("Incorrect password!");
+        config.participants.forEach(person => {
+          const btn = document.createElement("button");
+          btn.className = "person";
+          const label = () => {
+            btn.innerHTML = "";
+            btn.append(person.name);
+            if (seen.has(person.name)) {
+              const s = document.createElement("span");
+              s.className = "seen";
+              s.textContent = "  ✓ seen on this device";
+              btn.append(s);
             }
           };
-          list.appendChild(div);
+          label();
+
+          btn.onclick = async () => {
+            const ok = await askPassword(
+              person.name,
+              async pw => (await sha256Hex(pw)) === person.passwordHash
+            );
+            if (!ok) return;
+            $("pwDialog").close();
+            btn.innerHTML = "";
+            btn.append(`${person.name} ➡️ `);
+            const r = document.createElement("span");
+            r.className = "reveal";
+            r.textContent = assignments[person.name];
+            btn.append(r);
+            btn.disabled = true;
+            seen.add(person.name);
+            saveSeen(event.year, seen);
+            confetti();
+          };
+          list.appendChild(btn);
         });
 
-        // Snowflakes
-        const snowCount = 40;
-        for (let i = 0; i < snowCount; i++) {
-          const snow = document.createElement('div');
-          snow.className = 'snowflake';
-          snow.textContent = '❄';
-          snow.style.left = Math.random() * 100 + 'vw';
-          snow.style.animationDuration = (Math.random() * 5 + 5) + 's';
-          snow.style.fontSize = (Math.random() * 10 + 10) + 'px';
-          snow.style.animationDelay = Math.random() * 5 + 's';
-          document.body.appendChild(snow);
-        }
-
+        snow();
       } catch (err) {
-        console.error("Error loading participants.json:", err);
-        document.getElementById('list').innerHTML = "<p style='color:red'>Could not load participant data.</p>";
+        console.error(err);
+        $("list").innerHTML = "<p style='color:red'>Could not load participant data.</p>";
       }
     }
 

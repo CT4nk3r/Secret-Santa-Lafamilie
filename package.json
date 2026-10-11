@@ -1,0 +1,9 @@
+{
+  "name": "secret-santa-lafamilie",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "hash": "node hash_passwords.js passwords.json participants.json participants.json"
+  }
+}
